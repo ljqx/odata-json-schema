@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "Loc": {
+      "nullable": false
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "AirportLocation",
+    "BaseType": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/Location"
+    },
+    "OpenType": true
+  }
+}

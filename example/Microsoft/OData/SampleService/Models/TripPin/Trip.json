@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "properties": {
+    "Photos": {
+      "type": "array",
+      "items": {
+        "$ref": "Microsoft/OData/SampleService/Models/TripPin/Photo"
+      }
+    },
+    "PlanItems": {
+      "type": "array",
+      "items": {
+        "$ref": "Microsoft/OData/SampleService/Models/TripPin/PlanItem"
+      }
+    },
+    "TripId": {
+      "nullable": false,
+      "type": "integer"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Name": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Budget": {
+      "nullable": false
+    },
+    "StartsAt": {
+      "nullable": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "EndsAt": {
+      "nullable": false,
+      "type": "string",
+      "format": "date-time"
+    },
+    "Tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Trip",
+    "NavigationProperty": [
+      "Photos",
+      "PlanItems"
+    ],
+    "Key": [
+      "TripId"
+    ],
+    "Function": {
+      "Microsoft.OData.SampleService.Models.TripPin.GetInvolvedPeople": {
+        "Namespace": "Microsoft.OData.SampleService.Models.TripPin",
+        "Name": "GetInvolvedPeople",
+        "IsBound": true,
+        "Parameter": {
+          "trip": {
+            "nullable": false,
+            "$ref": "Microsoft/OData/SampleService/Models/TripPin/Trip"
+          }
+        },
+        "BindingParameter": "trip",
+        "ReturnType": {
+          "type": "array",
+          "items": {
+            "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
+          }
+        }
+      }
+    }
+  }
+}

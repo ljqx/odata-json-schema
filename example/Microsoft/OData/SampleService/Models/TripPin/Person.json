@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "properties": {
+    "Friends": {
+      "type": "array",
+      "items": {
+        "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
+      }
+    },
+    "Trips": {
+      "type": "array",
+      "items": {
+        "$ref": "Microsoft/OData/SampleService/Models/TripPin/Trip"
+      }
+    },
+    "Photo": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/Photo"
+    },
+    "UserName": {
+      "nullable": false,
+      "type": "string"
+    },
+    "FirstName": {
+      "nullable": false,
+      "type": "string"
+    },
+    "LastName": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Emails": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "AddressInfo": {
+      "type": "array",
+      "items": {
+        "$ref": "Microsoft/OData/SampleService/Models/TripPin/Location"
+      }
+    },
+    "Gender": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/PersonGender"
+    },
+    "Concurrency": {
+      "nullable": false,
+      "type": "integer"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Person",
+    "OpenType": true,
+    "NavigationProperty": [
+      "Friends",
+      "Trips",
+      "Photo"
+    ],
+    "Key": [
+      "UserName"
+    ],
+    "Action": {
+      "Microsoft.OData.SampleService.Models.TripPin.ShareTrip": {
+        "Namespace": "Microsoft.OData.SampleService.Models.TripPin",
+        "Name": "ShareTrip",
+        "IsBound": true,
+        "Parameter": {
+          "person": {
+            "nullable": false,
+            "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
+          },
+          "userName": {
+            "nullable": false,
+            "type": "string"
+          },
+          "tripId": {
+            "nullable": false,
+            "type": "integer"
+          }
+        },
+        "BindingParameter": "person"
+      }
+    },
+    "Function": {
+      "Microsoft.OData.SampleService.Models.TripPin.GetFavoriteAirline": {
+        "Namespace": "Microsoft.OData.SampleService.Models.TripPin",
+        "Name": "GetFavoriteAirline",
+        "IsBound": true,
+        "Parameter": {
+          "person": {
+            "nullable": false,
+            "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
+          }
+        },
+        "BindingParameter": "person",
+        "ReturnType": {
+          "$ref": "Microsoft/OData/SampleService/Models/TripPin/Airline"
+        }
+      },
+      "Microsoft.OData.SampleService.Models.TripPin.GetFriendsTrips": {
+        "Namespace": "Microsoft.OData.SampleService.Models.TripPin",
+        "Name": "GetFriendsTrips",
+        "IsBound": true,
+        "Parameter": {
+          "person": {
+            "nullable": false,
+            "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
+          },
+          "userName": {
+            "nullable": false,
+            "type": "string"
+          }
+        },
+        "BindingParameter": "person",
+        "ReturnType": {
+          "type": "array",
+          "items": {
+            "$ref": "Microsoft/OData/SampleService/Models/TripPin/Trip"
+          }
+        }
+      }
+    }
+  }
+}

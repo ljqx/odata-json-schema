@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "properties": {
+    "BuildingInfo": {
+      "type": "string"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "EventLocation",
+    "BaseType": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/Location"
+    },
+    "OpenType": true
+  }
+}

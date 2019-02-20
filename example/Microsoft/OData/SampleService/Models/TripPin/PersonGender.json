@@ -1,0 +1,16 @@
+{
+  "type": "string",
+  "enum": [
+    "Male",
+    "Female",
+    "Unknown"
+  ],
+  "$$ODataExtension": {
+    "Name": "PersonGender",
+    "Value": {
+      "Male": 0,
+      "Female": 1,
+      "Unknown": 2
+    }
+  }
+}

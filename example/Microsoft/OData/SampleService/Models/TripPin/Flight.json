@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "From": {
+      "nullable": false,
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/Airport"
+    },
+    "To": {
+      "nullable": false,
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/Airport"
+    },
+    "Airline": {
+      "nullable": false,
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/Airline"
+    },
+    "FlightNumber": {
+      "nullable": false,
+      "type": "string"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Flight",
+    "BaseType": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/PublicTransportation"
+    },
+    "NavigationProperty": [
+      "From",
+      "To",
+      "Airline"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "Address": {
+      "nullable": false,
+      "type": "string"
+    },
+    "City": {
+      "nullable": false,
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/City"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Location",
+    "OpenType": true
+  }
+}

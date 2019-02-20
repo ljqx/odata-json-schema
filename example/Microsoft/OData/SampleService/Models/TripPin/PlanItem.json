@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+    "PlanItemId": {
+      "nullable": false,
+      "type": "integer"
+    },
+    "ConfirmationCode": {
+      "type": "string"
+    },
+    "StartsAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EndsAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "PlanItem",
+    "Key": [
+      "PlanItemId"
+    ]
+  }
+}

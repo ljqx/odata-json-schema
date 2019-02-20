@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "properties": {
+    "CountryRegion": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Name": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Region": {
+      "nullable": false,
+      "type": "string"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "City"
+  }
+}

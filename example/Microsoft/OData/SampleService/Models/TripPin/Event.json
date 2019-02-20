@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "Description": {
+      "type": "string"
+    },
+    "OccursAt": {
+      "nullable": false,
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/EventLocation"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Event",
+    "BaseType": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/PlanItem"
+    },
+    "OpenType": true
+  }
+}

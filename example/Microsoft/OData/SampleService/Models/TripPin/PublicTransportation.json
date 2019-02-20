@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "SeatNumber": {
+      "type": "string"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "PublicTransportation",
+    "BaseType": {
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/PlanItem"
+    }
+  }
+}

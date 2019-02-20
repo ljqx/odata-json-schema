@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "properties": {
+    "Id": {
+      "nullable": false,
+      "type": "integer"
+    },
+    "Name": {
+      "type": "string"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Photo",
+    "Key": [
+      "Id"
+    ]
+  }
+}

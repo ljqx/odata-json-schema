@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "properties": {
+    "IcaoCode": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Name": {
+      "nullable": false,
+      "type": "string"
+    },
+    "IataCode": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Location": {
+      "nullable": false,
+      "$ref": "Microsoft/OData/SampleService/Models/TripPin/AirportLocation"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Airport",
+    "Key": [
+      "IcaoCode"
+    ]
+  }
+}

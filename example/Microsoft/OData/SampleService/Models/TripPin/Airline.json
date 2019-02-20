@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "properties": {
+    "AirlineCode": {
+      "nullable": false,
+      "type": "string"
+    },
+    "Name": {
+      "nullable": false,
+      "type": "string"
+    }
+  },
+  "$$ODataExtension": {
+    "Name": "Airline",
+    "Key": [
+      "AirlineCode"
+    ]
+  }
+}
