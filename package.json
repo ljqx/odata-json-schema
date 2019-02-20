@@ -1,12 +1,21 @@
 {
   "name": "odata-json-schema",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "author": {
     "name": "Remi Liu",
     "email": "ljqx@live.cn"
   },
   "main": "index",
+  "repository": {
+    "url": "https://github.com/ljqx/odata-json-schema"
+  },
+  "keywords": [
+    "OData",
+    "OData V4",
+    "Schema",
+    "JSON Schema"
+  ],
   "dependencies": {
     "mkdirp": "^0.5.1",
     "request-promise-native": "^1.0.7",
