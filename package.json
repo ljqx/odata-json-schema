@@ -1,0 +1,18 @@
+{
+  "name": "odata-json-schema",
+  "license": "MIT",
+  "author": {
+    "name": "Remi Liu",
+    "email": "ljqx@live.cn"
+  },
+  "main": "index",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "request-promise-native": "^1.0.7",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "jest": "^24.1.0"
+  }
+}
