@@ -2,11 +2,10 @@
   "type": "object",
   "properties": {
     "Id": {
-      "nullable": false,
-      "type": "integer"
+      "$ref": "Edm/Int64"
     },
     "Name": {
-      "type": "string"
+      "$ref": "Edm/String"
     }
   },
   "$$ODataExtension": {

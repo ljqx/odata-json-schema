@@ -1,0 +1,6 @@
+{
+  "type": "integer",
+  "$$ODataExtension": {
+    "Name": "SByte"
+  }
+}

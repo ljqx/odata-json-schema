@@ -2,19 +2,15 @@
   "type": "object",
   "properties": {
     "IcaoCode": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "Name": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "IataCode": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "Location": {
-      "nullable": false,
       "$ref": "Microsoft/OData/SampleService/Models/TripPin/AirportLocation"
     }
   },

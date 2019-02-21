@@ -14,33 +14,30 @@
       }
     },
     "TripId": {
-      "nullable": false,
-      "type": "integer"
+      "$ref": "Edm/Int32"
+    },
+    "ShareId": {
+      "$ref": "Edm/Guid"
     },
     "Description": {
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "Name": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "Budget": {
-      "nullable": false
+      "$ref": "Edm/Single"
     },
     "StartsAt": {
-      "nullable": false,
-      "type": "string",
-      "format": "date-time"
+      "$ref": "Edm/DateTimeOffset"
     },
     "EndsAt": {
-      "nullable": false,
-      "type": "string",
-      "format": "date-time"
+      "$ref": "Edm/DateTimeOffset"
     },
     "Tags": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "Edm/String"
       }
     }
   },
@@ -60,7 +57,6 @@
         "IsBound": true,
         "Parameter": {
           "trip": {
-            "nullable": false,
             "$ref": "Microsoft/OData/SampleService/Models/TripPin/Trip"
           }
         },

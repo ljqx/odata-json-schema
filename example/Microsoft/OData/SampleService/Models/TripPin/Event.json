@@ -2,10 +2,9 @@
   "type": "object",
   "properties": {
     "Description": {
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "OccursAt": {
-      "nullable": false,
       "$ref": "Microsoft/OData/SampleService/Models/TripPin/EventLocation"
     }
   },

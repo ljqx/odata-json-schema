@@ -2,11 +2,9 @@
   "type": "object",
   "properties": {
     "Address": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "City": {
-      "nullable": false,
       "$ref": "Microsoft/OData/SampleService/Models/TripPin/City"
     }
   },

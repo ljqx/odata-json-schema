@@ -2,7 +2,7 @@
   "type": "object",
   "properties": {
     "BuildingInfo": {
-      "type": "string"
+      "$ref": "Edm/String"
     }
   },
   "$$ODataExtension": {

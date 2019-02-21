@@ -2,7 +2,7 @@
   "type": "object",
   "properties": {
     "SeatNumber": {
-      "type": "string"
+      "$ref": "Edm/String"
     }
   },
   "$$ODataExtension": {

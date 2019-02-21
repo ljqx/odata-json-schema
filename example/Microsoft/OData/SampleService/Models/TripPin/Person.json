@@ -17,21 +17,18 @@
       "$ref": "Microsoft/OData/SampleService/Models/TripPin/Photo"
     },
     "UserName": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "FirstName": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "LastName": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "Emails": {
       "type": "array",
       "items": {
-        "type": "string"
+        "$ref": "Edm/String"
       }
     },
     "AddressInfo": {
@@ -44,8 +41,7 @@
       "$ref": "Microsoft/OData/SampleService/Models/TripPin/PersonGender"
     },
     "Concurrency": {
-      "nullable": false,
-      "type": "integer"
+      "$ref": "Edm/Int64"
     }
   },
   "$$ODataExtension": {
@@ -66,16 +62,13 @@
         "IsBound": true,
         "Parameter": {
           "person": {
-            "nullable": false,
             "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
           },
           "userName": {
-            "nullable": false,
-            "type": "string"
+            "$ref": "Edm/String"
           },
           "tripId": {
-            "nullable": false,
-            "type": "integer"
+            "$ref": "Edm/Int32"
           }
         },
         "BindingParameter": "person"
@@ -88,7 +81,6 @@
         "IsBound": true,
         "Parameter": {
           "person": {
-            "nullable": false,
             "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
           }
         },
@@ -103,12 +95,10 @@
         "IsBound": true,
         "Parameter": {
           "person": {
-            "nullable": false,
             "$ref": "Microsoft/OData/SampleService/Models/TripPin/Person"
           },
           "userName": {
-            "nullable": false,
-            "type": "string"
+            "$ref": "Edm/String"
           }
         },
         "BindingParameter": "person",

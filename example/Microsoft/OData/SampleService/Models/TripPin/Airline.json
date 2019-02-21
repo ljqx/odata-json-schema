@@ -2,12 +2,10 @@
   "type": "object",
   "properties": {
     "AirlineCode": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "Name": {
-      "nullable": false,
-      "type": "string"
+      "$ref": "Edm/String"
     }
   },
   "$$ODataExtension": {

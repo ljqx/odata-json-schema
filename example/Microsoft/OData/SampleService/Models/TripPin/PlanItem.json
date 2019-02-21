@@ -2,19 +2,19 @@
   "type": "object",
   "properties": {
     "PlanItemId": {
-      "nullable": false,
-      "type": "integer"
+      "$ref": "Edm/Int32"
     },
     "ConfirmationCode": {
-      "type": "string"
+      "$ref": "Edm/String"
     },
     "StartsAt": {
-      "type": "string",
-      "format": "date-time"
+      "$ref": "Edm/DateTimeOffset"
     },
     "EndsAt": {
-      "type": "string",
-      "format": "date-time"
+      "$ref": "Edm/DateTimeOffset"
+    },
+    "Duration": {
+      "$ref": "Edm/Duration"
     }
   },
   "$$ODataExtension": {
