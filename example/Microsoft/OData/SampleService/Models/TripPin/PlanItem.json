@@ -8,13 +8,34 @@
       "$ref": "Edm/String"
     },
     "StartsAt": {
-      "$ref": "Edm/DateTimeOffset"
+      "oneOf": [
+        {
+          "$ref": "Edm/DateTimeOffset"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "EndsAt": {
-      "$ref": "Edm/DateTimeOffset"
+      "oneOf": [
+        {
+          "$ref": "Edm/DateTimeOffset"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "Duration": {
-      "$ref": "Edm/Duration"
+      "oneOf": [
+        {
+          "$ref": "Edm/Duration"
+        },
+        {
+          "type": "null"
+        }
+      ]
     }
   },
   "$$ODataExtension": {

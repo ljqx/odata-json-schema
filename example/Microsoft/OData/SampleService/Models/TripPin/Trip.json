@@ -17,7 +17,14 @@
       "$ref": "Edm/Int32"
     },
     "ShareId": {
-      "$ref": "Edm/Guid"
+      "oneOf": [
+        {
+          "$ref": "Edm/Guid"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "Description": {
       "$ref": "Edm/String"

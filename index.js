@@ -9,9 +9,17 @@ const { parseSchemas } = require('./lib/parseSchemas');
 
 async function generateJSONSchema(endpoint, {
   dist = '.',
+  isByDefaultNullable = (ref) => {
+    if (ref === 'Edm/String') {
+      return true;
+    }
+    return !ref.startsWith('Edm');
+  },
 } = {}) {
   const metadata = await getMetadata(endpoint);
-  const schemas = parseSchemas(metadata['edmx:Edmx']['edmx:DataServices'][0].Schema);
+  const schemas = parseSchemas(metadata['edmx:Edmx']['edmx:DataServices'][0].Schema, {
+    isByDefaultNullable
+  });
 
   for (const namespace in schemas) {
     if (Object.getOwnPropertyNames(schemas[namespace]).length) {

@@ -10,6 +10,13 @@ With [the $metadata of service used in OData Doc](https://services.odata.org/V4/
 const { generateJSONSchema } = require('odata-json-schema')
 
 generateJSONSchema('https://services.odata.org/V4/TripPinService', {
-  dist: './dist'
+  dist: './dist',
+  // most types are nullable, you may want to limit generated schema size by considering some of the types are by default nullable
+  isByDefaultNullable(ref) {
+    if (ref === 'Edm/String') {
+      return true;
+    }
+    return !ref.startsWith('Edm');
+  },
 });
 ```
