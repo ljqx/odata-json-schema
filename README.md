@@ -18,5 +18,7 @@ generateJSONSchema('https://services.odata.org/V4/TripPinService', {
     }
     return !ref.startsWith('Edm');
   },
+  // by default enum value is not generated into the schema, if you need it set this value to true
+  withEnumValue: true,
 });
 ```

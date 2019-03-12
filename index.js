@@ -15,10 +15,12 @@ async function generateJSONSchema(endpoint, {
     }
     return !ref.startsWith('Edm');
   },
+  withEnumValue = false,
 } = {}) {
   const metadata = await getMetadata(endpoint);
   const schemas = parseSchemas(metadata['edmx:Edmx']['edmx:DataServices'][0].Schema, {
-    isByDefaultNullable
+    isByDefaultNullable,
+    withEnumValue,
   });
 
   for (const namespace in schemas) {
