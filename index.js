@@ -72,7 +72,8 @@ async function bundle(root, {
   })
   const bundled = {}
   for (const file of files) {
-    bundled[file.substr(0, file.length - '.json'.length)] = require(`./${root}/${file}`);
+    const name = file.substr(0, file.length - '.json'.length);
+    bundled[name] = require(path.join(process.cwd(), root, file));
   }
   await writeFile(dist, JSON.stringify(bundled))
 }
