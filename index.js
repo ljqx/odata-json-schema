@@ -34,4 +34,34 @@ async function generateJSONSchema(endpoint, {
   }
 }
 
+function findNavigableSchemas(root, startingPoint) {
+  function loadRawSchema(name) {
+    return require(`./dist/${name}`);
+  }
+
+  const queue = [startingPoint];
+  const visited = new Set(queue);
+  const navigableSchemas = [];
+
+  while (queue.length) {
+    const first = queue.shift();
+    navigableSchemas.push(first);
+
+    const schema = loadRawSchema(first);
+    for (let property of schema.$$ODataExtension.NavigationProperty || []) {
+      const propertySchema = schema.properties[property];
+      const refType = propertySchema.type == 'array' ?
+        propertySchema.items.$ref :
+        propertySchema.$ref;
+      if (typeof refType === 'string' && !visited.has(refType)) {
+        queue.push(refType);
+        visited.add(refType);
+      }
+    }
+  }
+
+  return
+}
+
 module.exports.generateJSONSchema = generateJSONSchema
+module.exports.findNavigableSchemas = findNavigableSchemas
