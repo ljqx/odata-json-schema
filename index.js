@@ -67,10 +67,12 @@ function findNavigableSchemas(root, startingPoint) {
 async function bundle(root, {
   dist = 'schemas.json',
 } = {}) {
-  const files = await glob(path.join(root, '**/*.json'))
+  const files = await glob('**/*.json', {
+    cwd: root
+  })
   const bundled = {}
   for (const file of files) {
-    bundled[file] = require(`./${file}`);
+    bundled[file.substr(0, file.length - '.json'.length)] = require(`./${root}/${file}`);
   }
   await writeFile(dist, JSON.stringify(bundled))
 }
