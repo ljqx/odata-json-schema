@@ -25,7 +25,7 @@ async function generateJSONSchema(endpoint, {
   });
 
   for (const namespace in schemas) {
-    if (Object.getOwnPropertyNames(schemas[namespace]).length) {
+    if (!namespace.startsWith('http') && Object.getOwnPropertyNames(schemas[namespace]).length) {
       const namespacePath = path.join(dist, parseFullName(namespace))
       await mkdirp(namespacePath)
       for (const name in schemas[namespace]) {
@@ -37,7 +37,7 @@ async function generateJSONSchema(endpoint, {
 
 function findNavigableSchemas(root, startingPoint) {
   function loadRawSchema(name) {
-    return require(`./dist/${name}`)
+    return require(`./${root}/${name}`)
   }
 
   const queue = [startingPoint]
