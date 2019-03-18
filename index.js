@@ -3,6 +3,7 @@ const path = require('path');
 const util = require('util');
 const glob = util.promisify(require('glob'));
 const mkdirp = util.promisify(require('mkdirp'));
+const rimraf = util.promisify(require('rimraf'));
 
 const writeFile = util.promisify(fs.writeFile);
 const { getMetadata } = require('./lib/getMetadata');
@@ -19,6 +20,7 @@ async function generateJSONSchema(endpoint, {
   },
   withEnumValue = false,
 } = {}) {
+  await rimraf(dist);
   const metadata = await getMetadata(endpoint);
   const schemas = parseSchemas(metadata['edmx:Edmx']['edmx:DataServices'][0].Schema, {
     isByDefaultNullable,
