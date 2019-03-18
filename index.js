@@ -10,6 +10,16 @@ const { getMetadata } = require('./lib/getMetadata');
 const { parseFullName } = require('./lib/parseFullName');
 const { parseSchemas } = require('./lib/parseSchemas');
 
+async function writeSchema(schema, schemaPath) {
+  await writeFile(schemaPath, JSON.stringify(schema, null, 2));
+}
+
+async function writeNamespaceSchemas(namespaceSchemas, namespacePath) {
+  await Promise.all(Object.entries(namespaceSchemas).map(
+    ([name, schema]) => writeSchema(schema, path.join(namespacePath, `${name}.json`)),
+  ));
+}
+
 async function generateJSONSchema(endpoint, {
   dist = '.',
   isByDefaultNullable = (ref) => {
@@ -27,18 +37,14 @@ async function generateJSONSchema(endpoint, {
     withEnumValue,
   });
 
-  await Promise.all([Object.entries(schemas).filter(
+  await Promise.all(Object.entries(schemas).filter(
     ([namespace, namespaceSchemas]) => !namespace.startsWith('http')
       && Object.getOwnPropertyNames(namespaceSchemas).length,
-  ).map(([namespace, namespaceSchemas]) => {
+  ).map(async ([namespace, namespaceSchemas]) => {
     const namespacePath = path.join(dist, parseFullName(namespace));
-    return (async () => {
-      await mkdirp(namespacePath);
-      await Promise.all(Object.entries(namespaceSchemas).map(
-        ([name, schema]) => writeFile(path.join(namespacePath, `${name}.json`), JSON.stringify(schema, null, 2)),
-      ));
-    })();
-  })]);
+    await mkdirp(namespacePath);
+    await writeNamespaceSchemas(namespaceSchemas, namespacePath);
+  }));
 }
 
 function findNavigableSchemas(root, startingPoint) {
