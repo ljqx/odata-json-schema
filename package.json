@@ -17,12 +17,15 @@
     "JSON Schema"
   ],
   "dependencies": {
+    "glob": "^7.1.3",
     "mkdirp": "^0.5.1",
     "request-promise-native": "^1.0.7",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
     "jest": "^24.1.0"
   }
 }
